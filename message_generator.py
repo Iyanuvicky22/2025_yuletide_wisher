@@ -143,5 +143,5 @@ def message_main():
     logger.info("%s \nSaved: %s", output_file, "oya-na")
 
 
-if __name__ == "__main__":
-    message_main()
+# if __name__ == "__main__":
+#     message_main()
