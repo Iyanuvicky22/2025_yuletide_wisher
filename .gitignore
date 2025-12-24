@@ -1,0 +1,15 @@
+.venv/
+
+*.env
+
+*.ipynb
+
+*__init__.py
+
+data/
+
+*poetry.lock
+
+logs/
+
+__pycache__/

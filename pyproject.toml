@@ -1,0 +1,20 @@
+[project]
+name = "yuletide"
+version = "0.1.0"
+description = "Yuletide Email Wishes Program using AI generated text from Openai APIs and smtblib packages"
+authors = [
+    {name = "Arowosegbe Victor",email = "iyanuvicky@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas (>=2.3.3,<3.0.0)",
+    "openai (>=2.14.0,<3.0.0)",
+    "load-dotenv (>=0.1.0,<0.2.0)",
+    "openpyxl (>=3.1.5,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
