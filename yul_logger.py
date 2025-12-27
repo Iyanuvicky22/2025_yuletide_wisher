@@ -11,7 +11,7 @@ day_stamp = datetime.now().strftime("%Y-%m-%d")
 
 log_dir = "logs"
 os.makedirs(log_dir, exist_ok=True)
-log_path = os.path.join(log_dir, f"{day_stamp}_yuletide.log")
+log_path = os.path.join(log_dir, "yuletide.log")
 
 logging.basicConfig(
     level=logging.INFO,
@@ -21,3 +21,4 @@ logging.basicConfig(
 )
 
 logger = logging.getLogger(__name__)
+

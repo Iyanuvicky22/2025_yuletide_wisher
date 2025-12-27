@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+month_day = dt.datetime.now().strftime("%b-%d")
+
 
 def yuletide_mail_sender():
     """
@@ -17,7 +19,6 @@ def yuletide_mail_sender():
         for _, row in data.iterrows():
             full_name = row["full_name"]
             email = row['email']
-            name = row['first_name']
             message = row["ai_message"].strip('"')
             with smtplib.SMTP("smtp.gmail.com", 587) as connection:
                 connection.starttls()
@@ -25,7 +26,7 @@ def yuletide_mail_sender():
                                  password=os.getenv("gmail_password"))
                 connection.sendmail(
                     from_addr=os.getenv("my_email"),
-                    to_addrs="iyanuvicky@gmail.com",
+                    to_addrs=email,
                     msg=f"Subject: Merry Xmas {full_name}\n\n{message}\n\nYours Sincerely\nArowosegbe Victor".encode("utf-8")
                 )
     except FileNotFoundError:
@@ -33,6 +34,6 @@ def yuletide_mail_sender():
         data = pd.read_excel(file_path)
 
 
-if __name__ == "__main__":
-    yuletide_mail_sender()
-
+# if __name__ == "__main__":
+#     yuletide_mail_sender()
+print(f"Month_day: {month_day}")
